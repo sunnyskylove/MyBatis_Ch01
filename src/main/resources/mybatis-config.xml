@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>     <!--("시작하기>XML에서 SqlSessionFactory 빌드하기") 공식홈페이지에서 4줄만 퍼옴! -->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>   <!-- configuration 안에 환경이 들어가 있고, 그 안에 데이터정보들 넣어준것이다.(+++++++,.자바와 방식만다르고 같다)-->
+    <environments default="dev">                <!-- #환경 설정함 -->
+        <environment id="dev">
+            <!-- 필기. JDBC 와 MANAGED 둘중 하나 선택 가능 -->
+            <transactionManager type="JDBC"/>
+            <!-- 필기. POOLED 와 UNPOOLED 둘 중 하나 선택 가능 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost/menudb"/>
+                <property name="username" value="ohgiraffers"/>
+                <property name="password" value="ohgiraffers"/>
+            </dataSource>
+        </environment>
+        <!-- 필기. 컴퓨터는 말을 잘 듣기 때문에 항상 등록을 해주자! java -> addMapper 와 같다.-->
+    </environments>
+    <mappers>                       <!-- 중요! mappers 안에 mapper 등록 해야지만 실행결과 받을 수 있다.-->
+        <mapper resource="mapper.xml"/>
+    </mappers>
+</configuration>
