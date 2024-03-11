@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Application {
 
-    /* 중요. (내부) 필드 작성!*/
+    /* 중요. 1. (내부) 필드 작성!*/
     private static String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static String URL = "jdbc:mysql://localhost/menudb";
     private static String USER = "ohgiraffers";
@@ -65,11 +65,8 @@ public class Application {
 
         // 리터럴 형태이므로(현재기준: 2024-03-11) 담아주기!>> java.util.Date date= ~~  로!
         java.util.Date date = mapper.selectSysdate();
-
         System.out.println("date = " + date);
-
         sqlSession.close();     // 열어줬으니 닫아주기~!
 
     }
-
 }
