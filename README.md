@@ -1,1 +1,1 @@
-## java config & xml
+## mybatis, java config & xml
